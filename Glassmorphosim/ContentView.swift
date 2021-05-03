@@ -10,6 +10,7 @@ import SwiftUIX
 
 struct ContentView: View {
     @State private var showCards = false
+    @State private var cardPosition = CGSize.zero
     
     var body: some View {
         ZStack {
@@ -19,12 +20,26 @@ struct ContentView: View {
             content
             
             CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
-                .onTapGesture {
-                    withAnimation {
-                        self.showCards.toggle()
-                    }
-                }
+                .offset(y: -40)
+                .offset(x: cardPosition.width, y: cardPosition.height)
+                .animation(.easeIn(duration: 0.6))
+                .padding(20)
             
+            CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
+                .offset(y: -20)
+                .offset(x: cardPosition.width, y: cardPosition.height)
+                .animation(.easeIn(duration: 0.4))
+                .padding(10)
+            CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
+                .offset(x: cardPosition.width, y: cardPosition.height)
+                .animation(.easeIn)
+                .gesture(DragGesture()
+                            .onChanged({ value in
+                                self.cardPosition = value.translation
+                            })
+                            .onEnded({ value in
+                                self.cardPosition = .zero
+                            }))
         }
     }
     
