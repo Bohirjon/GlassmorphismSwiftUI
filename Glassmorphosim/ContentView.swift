@@ -9,9 +9,29 @@ import SwiftUI
 import SwiftUIX
 
 struct ContentView: View {
+    @State private var showCards = false
     
     var body: some View {
         ZStack {
+            background
+                .ignoresSafeArea()
+            
+            content
+            
+            CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
+                .onTapGesture {
+                    withAnimation {
+                        self.showCards.toggle()
+                    }
+                }
+            
+        }
+    }
+    
+    var background : some View {
+        ZStack {
+            
+            
             AngularGradient(
                 gradient: Gradient(
                     colors:[Color(#colorLiteral(red: 0.9019607843, green: 0.2470588235, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.8980392157, green: 0.4196078431, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.6901960784, green: 0.9882352941, blue: 0.9725490196, alpha: 1)),Color(#colorLiteral(red: 0.9843137255, green: 0.9333333333, blue: 0.5176470588, alpha: 1)), Color(#colorLiteral(red: 0.9019607843, green: 0.2470588235, blue: 0.2549019608, alpha: 1))]),
@@ -20,7 +40,6 @@ struct ContentView: View {
                             Gradient(
                                 colors: [Color.white.opacity(0), Color.white.opacity(1)]),
                            startPoint: .bottom, endPoint: .top)
-            content
         }
     }
     
@@ -34,7 +53,6 @@ struct ContentView: View {
                 .background(VisualEffectBlurView(blurStyle: UIBlurEffect.Style.light))
                 .mask(Circle())
                 .background(circleAvatarBackground)
-            
             
             Text("Bohirjon Akhmedov".uppercased())
                 .font(.footnote)
