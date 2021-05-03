@@ -33,13 +33,8 @@ struct ContentView: View {
                 .padding()
                 .background(VisualEffectBlurView(blurStyle: UIBlurEffect.Style.light))
                 .mask(Circle())
-                .overlay(Circle()
-                            .stroke(lineWidth: 0.5)
-                            .fill(Color.white))
-                
-                .mask(Circle())
-                .frame(width: 84, height: 84)
-                .offset(x: -30, y: -30)
+                .background(circleAvatarBackground)
+            
             
             Text("Bohirjon Akhmedov".uppercased())
                 .font(.footnote)
@@ -60,9 +55,16 @@ struct ContentView: View {
     }
     
     var circleAvatarBackground: some View {
-        AngularGradient(gradient:
-                            Gradient(stops: [ .init(color: Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), location: 0.65)])
-                        ,center: .center)
+        AngularGradient(gradient: Gradient(stops: [
+                                            .init(color: Color(#colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)), location: 0),
+                                            .init(color: Color(#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)), location: 1),
+                                            .init(color: Color(#colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)), location: 0.5421),
+                                            .init(color: Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)), location: 0.6732475384)]) , center: .center, angle: .degrees(120))
+            .frame(width: 84, height: 84)
+            .mask(Circle())
+            .overlay(RadialGradient(gradient: Gradient(stops: [.init(color: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)), location: 0), .init(color: Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), location: 1)]), center: .center, startRadius: 0.22, endRadius: 0.544))
+            .offset(x: -40, y: -40)
+            .blur(radius: 10)
     }
     
 }

@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		062673A2263D2F38007A95B9 /* Glassmorphosim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glassmorphosim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062673A5263D2F38007A95B9 /* GlassmorphosimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphosimApp.swift; sourceTree = "<group>"; };
-		062673A7263D2F38007A95B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		062673A7263D2F38007A95B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		062673A9263D2F39007A95B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		062673AC263D2F39007A95B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		062673AE263D2F39007A95B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
