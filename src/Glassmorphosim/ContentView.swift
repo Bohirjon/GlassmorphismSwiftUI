@@ -75,7 +75,7 @@ struct ContentView: View {
             Text("I am a software developer at Silk Road Professionals")
                 .font(.title)
                 .bold()
-            Text("Astrophysicist General and Special Theorists")
+            Text("Astrophysicist General and Special Relativity Theorists")
                 .font(.footnote)
             
             HStack {
