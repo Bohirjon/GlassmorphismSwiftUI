@@ -28,7 +28,7 @@ struct ContentView: View {
             CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
                 .offset(y: -20)
                 .offset(x: cardPosition.width, y: cardPosition.height)
-                .animation(.easeIn(duration: 0.4))
+                .animation(.easeIn(duration: 0.5))
                 .padding(10)
             CardView(cardTitle: "Visa",height: showCards ? 420 : 220)
                 .offset(x: cardPosition.width, y: cardPosition.height)
